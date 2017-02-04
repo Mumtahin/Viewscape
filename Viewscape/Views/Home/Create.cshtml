@@ -1,0 +1,157 @@
+﻿@model Viewscape.Models.ViewscapeTable
+
+@{
+    ViewBag.Title = "Create";
+}
+<div class="my-container">
+    <div class="container">
+        <div class="well">
+
+            <h1 class="database-header animated fadeIn">Add to Viewscape</h1>
+
+            @using (Html.BeginForm())
+            {
+                <div class="form-horizontal">
+                    <div class="vertical-rhythm">
+                        <h4 class="animated fadeIn">Please enter the following details of the building you would like to add.</h4>
+                    </div>
+
+                    <hr />
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <h3 class="text-center animated fadeInUp">Personal Details</h3>
+
+                    <div class="form-group animated fadeInUp">
+                        <label class="control-label col-md-4">First Name*</label>
+                        <div class="col-md-5">
+                            @Html.EditorFor(model => model.UserFirstName, new { htmlAttributes = new { @class = "form-control", placeholder = "John" } })
+                            @Html.ValidationMessageFor(model => model.UserFirstName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group animated fadeInUp">
+                        <label class="control-label col-md-4">Last Name*</label>
+                        <div class="col-md-5">
+                            @Html.EditorFor(model => model.UserLastName, new { htmlAttributes = new { @class = "form-control", placeholder = "Doe" } })
+                            @Html.ValidationMessageFor(model => model.UserLastName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <h3 class="text-center animated fadeInUp">Building Details</h3>
+
+                    <div class="form-group animated fadeInUp">
+                        <label class="control-label col-md-4">Name*</label>
+                        <div class="col-md-5">
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Empire State Building" } })
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group animated fadeInUp">
+                        <label class="control-label col-md-4">City*</label>
+                        <div class="col-md-5">
+                            @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control", placeholder = "New York" } })
+                            @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group animated fadeInUp">
+                        <label class="control-label col-md-4">Country*</label>
+                        <div class="col-md-5">
+                            @Html.EditorFor(model => model.Country, new { htmlAttributes = new { @class = "form-control", placeholder = "USA" } })
+                            @Html.ValidationMessageFor(model => model.Country, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group animated fadeInUp">
+                        <label class="control-label col-md-4">Cost (£)</label>
+                        <div class="col-md-5">
+                            @Html.EditorFor(model => model.Cost, new { htmlAttributes = new { @class = "form-control", placeholder = "143000000" } })
+                            @Html.ValidationMessageFor(model => model.Cost, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group animated fadeInUp">
+                        <label class="control-label col-md-4">Height (m)</label>
+                        <div class="col-md-5">
+                            @Html.EditorFor(model => model.Height, new { htmlAttributes = new { @class = "form-control", placeholder = "443" } })
+                            @Html.ValidationMessageFor(model => model.Height, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group animated fadeInUp">
+                        <label class="control-label col-md-4">Architectural Style</label>
+                        <div class="col-md-5">
+                            @Html.EditorFor(model => model.Style, new { htmlAttributes = new { @class = "form-control", placeholder = "Art Deco" } })
+                            @Html.ValidationMessageFor(model => model.Style, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group animated fadeInUp">
+                        @Html.LabelFor(model => model.Material, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-5">
+                            @Html.EditorFor(model => model.Material, new { htmlAttributes = new { @class = "form-control", placeholder = "Steel" } })
+                            @Html.ValidationMessageFor(model => model.Material, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group animated fadeInUp">
+                        @Html.LabelFor(model => model.Architect, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-5">
+                            @Html.EditorFor(model => model.Architect, new { htmlAttributes = new { @class = "form-control", placeholder = "Adam Smith" } })
+                            @Html.ValidationMessageFor(model => model.Architect, null, new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group animated fadeInUp">
+                        <label class="control-label col-md-4">Completed Year*</label>
+                        <div class="col-md-5">
+                            @Html.EditorFor(model => model.Completed, new { htmlAttributes = new { @class = "form-control", placeholder = "1931" } })
+                            @Html.ValidationMessageFor(model => model.Completed, null, new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group animated fadeInUp">
+                        <label class="control-label col-md-4">Description*</label>
+                        <div class="col-md-5">
+                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control", placeholder = "Built during the Depression between 1930 and 1931..." } })
+                            @Html.ValidationMessageFor(model => model.Description, null, new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group animated fadeInUp">
+                        <label class="control-label col-md-4">More Description</label>
+                        <div class="col-md-5">
+                            @Html.EditorFor(model => model.Description2, new { htmlAttributes = new { @class = "form-control", placeholder = "The design of the building changed 16 times during plann..." } })
+                            @Html.ValidationMessageFor(model => model.Description2, null, new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group animated fadeInUp">
+                        <label class="control-label col-md-4">Picture URL</label>
+                        <div class="col-md-5">
+                            @Html.EditorFor(model => model.Picture, new { htmlAttributes = new { @class = "form-control", placeholder = "https://pixabay.com/the-shard.png" } })
+                            @Html.ValidationMessageFor(model => model.Picture, null, new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="vertical-rhythm">
+                        <div class="form-group">
+                            <div class="col-md-offset-4 col-md-1">
+                                <input type="submit" value="Create" class="btn btn-default" />
+                            </div>
+                            <div class="col-md-2">
+                                @Html.ActionLink("Back to Encyclopedia", "Encyclopedia", null, new { @class = "btn btn-default pull-right" })
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                </div>
+            }
+        </div>
+    </div>
+</div>

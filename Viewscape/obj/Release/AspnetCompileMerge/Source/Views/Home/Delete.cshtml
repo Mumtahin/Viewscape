@@ -1,0 +1,200 @@
+﻿@model Viewscape.Models.ViewscapeTable
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="my-container">
+    <div class="container">
+        <div class="well">
+
+            <h1 class="database-header animated fadeIn">Remove</h1>
+
+            <div class="vertical-rhythm">
+                <h4 class="animated fadeIn">@Html.DisplayFor(model => model.Name)</h4>
+            </div>
+
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Picture)
+                </dt>
+                <dd>
+                    <img src=@Html.DisplayFor(model => model.Picture) width="482" height="321">
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.City)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.City)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Country)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Country)
+                </dd>
+                <dt>
+                    Cost (£)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Cost)
+                </dd>
+                <dt>
+                    Height (m)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Height)
+                </dd>
+                <dt>
+                    Architectural Style
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Style)
+                </dd>
+                <dt>
+                    Material
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Material)
+                </dd>
+
+                <dt>
+                    Architect
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Architect)
+                </dd>
+                <dt>
+                    Completed Date
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Completed)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Description)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+                <dt>
+                    Additional Description
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Description2)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Picture)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Picture)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.UserFirstName)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.UserFirstName)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.UserLastName)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.UserLastName)
+                </dd>
+            </dl>
+
+            <div class="vertical-rhythm">
+                <div class="form-group">
+                    <div class="col-md-offset-3 col-md-2">
+                        @Html.ActionLink("Edit Record", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" })
+                    </div>
+                    <div class="col-md-2">
+                        @Html.ActionLink("Back to Encyclopedia", "Encyclopedia", null, new { @class = "btn btn-default pull-right" })
+                    </div>
+                    <div class="col-md-2">
+                        @using (Html.BeginForm())
+                        {
+                            <input type="submit" value="Delete" class="btn btn-default" />
+                        }
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+
+        </div>
+    </div>
+</div>
+
+
+@*<h2>Delete</h2>
+
+    <div>
+        <h4>Movie</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayFor(model => model.Picture)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Picture)
+            </dd>
+            <dt>
+                @Html.DisplayFor(model => model.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt>
+                @Html.DisplayFor(model => model.Country)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Country)
+            </dd>
+            <dt>
+                @Html.DisplayFor(model => model.Cost)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Cost)
+            </dd>
+            <dt>
+                @Html.DisplayFor(model => model.Height)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Height)
+            </dd>
+            <dt>
+                @Html.DisplayFor(model => model.Description)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt>
+                @Html.DisplayFor(model => model.Style)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Style)
+            </dd>
+            <dt>
+                @Html.DisplayFor(model => model.Completed)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Completed)
+            </dd>
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            <input type="submit" value="Delete" />
+        }
+    </div>
+
+    <p>
+        @Html.ActionLink("Edit Record", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to Encyclopedia", "Encyclopedia")
+    </p>*@

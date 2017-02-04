@@ -1,0 +1,90 @@
+﻿@model Viewscape.Models.ViewscapeTable
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<!-- Full Page Image Background Carousel Header -->
+<header id="myCarousel" class="carousel slide">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for Slides -->
+    <div class="carousel-inner">
+        <div class="item">
+            <!-- Set the first background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('../../Images/kuala-lumpur.jpg');"><div class="layer1"></div></div>
+            <div class="hero">
+                <div class="hgroup">
+                    <h1 class="animated fadeInDown">Welcome to View<span class="logo-scape-theme">scape</span></h1>
+                    <hr />
+                    <h4 class="animated fadeInRight">This is a online encyclopedia of buildings all around the world. Please enter to discover untold secrets of various architectural masterpieces meticulously constructed by mankind since the age of dawn.</h4>
+                    <div class="animated fadeInLeft">
+                        @Html.ActionLink("Discover more", "Encyclopedia", "Home", new { @class = "text-center btn btn-theme btn-min-block" })
+                    </div>
+                </div>
+            </div>
+            <div class="animated  carousel-caption">
+                <h2 class="carousel-caption-text">Petronas Towers, Kuala Lumpur, Malaysia</h2>
+            </div>
+        </div>
+        <div class="item active">
+            <!-- Set the second background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('../../Images/lighthouse.jpg');"><div class="layer2"></div></div>
+
+            <!-- Set the first background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('../../Images/kuala-lumpur.jpg');"><div class="layer1"></div></div>
+            <div class="hero">
+                <div class="hgroup">
+                    <hgroup>
+                        <h1 class="animated fadeInDown">Welcome to View<span class="logo-scape-theme">scape</span></h1>
+                        <hr />
+                        <h4 class="animated fadeInRight">This is a non-profit online encyclopedia of buildings all around the world. Please enter to discover untold secrets of various architectural masterpieces meticulously constructed by mankind since the age of dawn.</h4>
+                        <div class="animated fadeInLeft">
+                            @Html.ActionLink("Discover more", "Encyclopedia", "Home", new { @class = "btn btn-theme btn-min-block" })
+                        </div>
+                    </hgroup>
+                </div>
+            </div>
+            <div class="carousel-caption">
+                <h2 class="carousel-caption-text">Phare du Petit Minou, Brest, France</h2>
+            </div>
+        </div>
+        <div class="item">
+            <!-- Set the third background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('../../Images/reichstag.jpg');"></div>
+
+            <!-- Set the first background image using inline CSS below. -->
+            <div class="fill" style="background-image:url('../../Images/kuala-lumpur.jpg');"><div class="layer1"></div></div>
+            <div class="hero">
+                <div class="hgroup">
+                    <hgroup>
+                        <h1 class="animated fadeInDown">Welcome to View<span class="logo-scape-theme">scape</span></h1>
+                        <hr />
+                        <h4 class="animated fadeInRight">This is a non-profit online encyclopedia of buildings all around the world. Please enter to discover untold secrets of various architectural masterpieces meticulously constructed by mankind since the age of dawn.</h4>
+                        <div class="animated fadeInLeft">
+                            @Html.ActionLink("Discover more", "Encyclopedia", "Home", new { @class = "discover-btn btn btn-theme btn-min-block" })
+                        </div>
+                    </hgroup>
+                </div>
+            </div>
+
+            <div class="carousel-caption">
+                <h2 class="carousel-caption-text">Reichstag building, Berlin, Germany</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="icon-next"></span>
+    </a>
+
+</header>

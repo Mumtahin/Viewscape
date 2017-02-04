@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ViewscapeModelStoreContainer" CdmEntityContainer="ViewscapeEntities">
+    <EntitySetMapping Name="ViewscapeTables">
+      <EntityTypeMapping TypeName="ViewscapeModel.ViewscapeTable">
+        <MappingFragment StoreEntitySet="ViewscapeTable">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Style" ColumnName="Style" />
+          <ScalarProperty Name="Material" ColumnName="Material" />
+          <ScalarProperty Name="Architect" ColumnName="Architect" />
+          <ScalarProperty Name="Completed" ColumnName="Completed" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Description2" ColumnName="Description2" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="UserFirstName" ColumnName="UserFirstName" />
+          <ScalarProperty Name="UserLastName" ColumnName="UserLastName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

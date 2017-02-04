@@ -1,0 +1,97 @@
+﻿@model Viewscape.Models.ViewscapeTable
+
+@using Viewscape.Helpers;
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="my-container">
+
+    <div class="container">
+        <section id="wrapper">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="masthead">
+                        <h1 class="database-header">
+                            <hr />
+                            <span class="light text-primary animated fadeIn">@Html.DisplayFor(model => model.Name)</span>
+                            <hr />
+                        </h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="article animated fadeInUp">
+
+                        <ul class="list-unstyled list-inline">
+                            <li><i class="fa fa-calendar"></i> January 02, 2016</li>
+                            <li><i class="fa fa-user"></i>By @Html.DisplayFor(model => model.UserFirstName) @Html.DisplayFor(model => model.UserLastName)</li>
+                            <li><i class="fa fa-comments"></i> <a href="#">24 Comments</a></li>
+                        </ul>
+
+                        <div class="verticle-rhythm">
+                            <img src="@Url.Content(@Html.DisplayFor(model => model.Picture).ToString())" height="400" alt="The Shard" class="details-img">
+                        </div>
+
+                        <h3>Located in @Html.DisplayFor(model => model.City), @Html.DisplayFor(model => model.Country)</h3>
+
+                        <div class="article-content">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <p>@Html.DisplayFor(model => model.Description)</p>
+                                </div>
+                            </div>
+
+                            <div class="vertical-rhythm">
+                                <div class="row">
+                                    <div class="col-md-6 details-map">
+                                        @{var countryString = Html.DisplayFor(model => model.Country).ToString();}
+                                        @{var country = countryString.Replace(" ", "+");}
+                                        @{var cityString = Html.DisplayFor(model => model.City).ToString();}
+                                        @{var city = cityString.Replace(" ", "+");}
+                                        @{var mapUrl = "https://maps.googleapis.com/maps/api/staticmap?zoom=9&size=490x280&key=AIzaSyBaN1_SyN-pRDI6Gd8rIigkARkQ4XttxZo&center=" + city + "," + country;}
+                                        <img src=@mapUrl />
+                                    </div>
+                                    <div class="col-md-6 details-facts">
+                                        <blockquote class="hero">
+                                            <p>@Html.DisplayNameFor(model => model.Cost): £@Html.DisplayFor(model => model.Cost)</p>
+                                            <p>Year of completion: @Html.DisplayFor(model => model.Completed)</p>
+                                            <p>Material Composition: @Html.DisplayFor(model => model.Material)</p>
+                                            <p>@Html.DisplayNameFor(model => model.Height): @Html.DisplayFor(model => model.Height)</p>
+                                            <p>Architectural @Html.DisplayNameFor(model => model.Style): @Html.DisplayFor(model => model.Style)</p>
+                                            <small>Lead Architect(s): @Html.DisplayFor(model => model.Architect)</small>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <p>@Html.DisplayFor(model => model.Description2)</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="vertical-rhythm">
+                            <p>
+                                @Html.ActionLink("Edit Record", "Edit", new { id = Model.Id }, new { @class = "btn btn-default pull-right" })
+                                @Html.ActionLink("Back to Encyclopedia", "Encyclopedia", null, new { @class = "btn btn-default" })
+                                <br />
+                                <br />
+                                <br />
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+    </div>
+
+</div>

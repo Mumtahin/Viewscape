@@ -1,0 +1,284 @@
+﻿html,
+body {
+    height: 100%;
+}
+
+.carousel,
+.item,
+.active {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.layer1 {
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.layer2 {
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.layer3 {
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Carousel stuff*/
+
+.filterTab {
+    background-color: #CCCCFF;
+    padding: 20px 10px 10px 52px;
+}
+
+.carousel-header {
+    position: absolute;
+    top: 25%;
+    z-index: 20;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+}
+
+.carousel-content {
+    position: absolute;
+    top: 39%;
+    z-index: 20;
+    color: white;
+}
+
+.carousel-caption {
+    text-align: center;
+    z-index: 4;
+}
+
+@media screen and (max-width: 450px) {
+    .carousel-caption-text {
+        font-size: 10px;
+    }
+}
+
+.background-shade {
+    background: rgba(0,0,0,0.4);
+}
+
+.carousel-caption-text {
+    font-weight: 300;
+    font-size: 20px !important;
+    margin-top: 0px;
+}
+
+/*Transparent button*/
+
+.btn-min-block {
+    min-width: 170px;
+    line-height: 26px;
+    z-index: 5;
+}
+
+.btn-theme {
+    margin-top: 30px;
+    color: #fff;
+    background-color: rgba(0,0,0,0.3);
+    border: 1px solid #fff;
+    z-index: 5;
+    letter-spacing: 3px;
+    text-shadow: none;
+    z-index: 5;
+}
+
+    .btn-theme:hover {
+        color: #000;
+        background-color: #fff;
+        border-color: #fff;
+        z-index: 5;
+    }
+
+content-text {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+}
+
+
+/********************************/
+/*          Hero Headers        */
+/********************************/
+
+.item .hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.75);
+    -webkit-transform: translate3d(-50%,-50%,0);
+    -moz-transform: translate3d(-50%,-50%,0);
+    -ms-transform: translate3d(-50%,-50%,0);
+    -o-transform: translate3d(-50%,-50%,0);
+    transform: translate3d(-50%,-50%,0);
+}
+
+.hgroup {
+    text-align: center!important;
+}
+
+.hgroup .btn {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.hero h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 5em;
+    text-align: center;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    line-height: 140%;
+}
+
+.hero h4 {
+    font-weight: 300;
+    background-color: rgba(0,0,0,0.2);
+    text-align: center;
+    width: 600px;
+    margin: auto;
+    text-align: left;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    line-height: 140%;
+    text-shadow: none;
+}
+
+/********************************/
+/*            Overlay           */
+/********************************/
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: #080d15;
+    opacity: .7;
+}
+
+/********************************/
+/*          Media Queries       */
+/********************************/
+@media screen and (min-width: 1100px) {
+    .hero {
+        width: 1200px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .hero h1 {
+        font-size: 3.1em;
+        margin-top: -50px;
+    }
+
+    .carousel-caption-text {
+    }
+
+    .carousel-caption {
+        background: rgba(0,0,0,0.2);
+    }
+
+    .hero h4 {
+        width: auto;
+        line-height: 120%;
+        font-size: 15px;
+        margin-bottom: 40px;
+    }
+}
+
+
+@media screen and (max-height: 700px) {
+    .carousel-caption-text {
+        display: none;
+    }
+
+    .hero h1 {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 300;
+        font-size: 3em;
+        text-align: center;
+        margin: auto;
+        margin-top: 50px;
+        margin-bottom: 0px;
+        line-height: 140%;
+    }
+
+    .hero h4 {
+        font-weight: 300;
+        font-size: 1em;
+        text-align: center;
+        width: auto;
+        margin: auto;
+        text-align: left;
+        margin-top: 40px;
+        margin-bottom: 10px;
+        line-height: 140%;
+        text-shadow: none;
+    }
+}
+
+@media screen and (max-width: 360px), screen and (max-height: 640px) {
+    .carousel-caption-text {
+        display: none;
+    }
+
+    .hero h1 {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 300;
+        font-size: 2em;
+        text-align: center;
+        margin: auto;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        line-height: 140%;
+    }
+
+    .hero h4 {
+        font-weight: 300;
+        font-size: 1em;
+        text-align: center;
+        width: auto;
+        margin: auto;
+        text-align: left;
+        margin-top: 0px;
+        margin-bottom: 50px;
+        line-height: 140%;
+        text-shadow: none;
+    }
+}

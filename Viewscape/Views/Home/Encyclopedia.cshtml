@@ -1,0 +1,125 @@
+﻿@model IEnumerable<Viewscape.Models.ViewscapeTable>
+
+@using Viewscape.Helpers;
+
+@{
+    ViewBag.Title = "Encyclopedia";
+}
+<div class="database-margin">
+
+    <div class="container body-content">
+
+        <div class="animated fadeIn">
+            <br />
+            <h1 class="database-header">Encyclopedia</h1>
+        </div>
+
+        <div class="animated fadeIn">
+            @Html.ActionLink("Add new building", "Create", null, new { @class = "btn btn-default pull-right adjust-pull-right" })
+        </div>
+
+        <br /><br />
+
+        @using (Html.BeginForm())
+        {
+            <div class="container searchbar">
+                <div class="row">
+                    <div class="panel panel-default">
+                        <div class="animated fadeIn panel-body">
+                            <div class="col-md-4 col-sm-12 search-bar-text">
+                                Sort buildings by Country:
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12 search-bar-form">
+                                @Html.DropDownList("buildingLocation", (IEnumerable<SelectListItem>)ViewBag.Database, "All Countries", new { @class = "form-control" })
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12 search-bar-form">
+                                <div class="row">
+                                    <div id="custom-search-input">
+                                        <div class="input-group col-md-12 search-bar">
+                                            @Html.TextBox("searchString", null, new { @class = "form-control", placeholder = "Search by name" })
+                                            <span class="input-group-btn">
+                                                <input type="submit" value="Search" class="btn btn-info" />
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+        @foreach (var building in Model)
+        {
+            <div class="vertical-rhythm">
+                <div class="container">
+                    <div class="row each-article animated fadeInUp">
+                        <div class="col-lg-5 col-md-6">
+                            <div class="featured-article">
+                                <a href="@Url.Action("Details", new { id = building.Id })">
+                                    <img src="@Url.Content(building.Picture)" width="482" height="321" alt="" class="thumb">
+                                    <div class="article-layer">
+                                    </div>
+                                    <div class="block-title">
+                                        <h2 class="text-spacing">@Html.DisplayFor(modelBuilding => building.Name)</h2>
+                                        <p class="sub-head" style="font-size: 15px"><small>@Html.DisplayFor(modelBuilding => building.City), @Html.DisplayFor(modelBuilding => building.Country)</small></p>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- /.featured-article -->
+                        </div>
+                        <div class="col-lg-7 col-md-6">
+                            <ul class="media-list main-list">
+                                <li class="media">
+                                    <div class="col-xs-6 each-article">
+                                        <div class="media-body">
+                                            <h4 class="media-heading">Cost: £@string.Format("{0:#,0}", building.Cost)</h4>
+                                            <p class="sub-head">Height: @Html.DisplayFor(modelBuilding => building.Height)m</p>
+                                            <p class="sub-head">Architectural Style: @Html.DisplayFor(modelBuilding => building.Style)</p>
+                                            <p class="sub-head">Material: @Html.DisplayFor(modelBuilding => building.Material)</p>
+                                            <p class="sub-head">Year completed: @Html.DisplayFor(modelBuilding => building.Completed)</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="pull-left" href="#">
+                                            @{var countryString = Html.DisplayFor(modelBuilding => building.Country).ToString();}
+                                            @{var country = countryString.Replace(" ", "+");}
+                                            @{var cityString = Html.DisplayFor(modelBuilding => building.City).ToString();}
+                                            @{var city = cityString.Replace(" ", "+");}
+                                            @{var mapUrl = "https://maps.googleapis.com/maps/api/staticmap?zoom=8&size=355x160&key=AIzaSyBaN1_SyN-pRDI6Gd8rIigkARkQ4XttxZo&center=" + city + "," + country;}
+                                            <img class="animated fadeIn" src=@mapUrl />
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <div class="col-sm-2 btn-collection">
+                                        <br />
+                                        @Html.ActionLink("Details", "Details", new { id = building.Id }, new { @class = "btn btn-default edit-buttons" })
+                                        @Html.ActionLink("Edit", "Edit", new { id = building.Id }, new { @class = "btn btn-default edit-buttons" })
+                                        @Html.ActionLink("Delete", "Delete", new { id = building.Id }, new { @class = "btn btn-default edit-buttons" })
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <p>
+                                            @{var descriptionString = Html.DisplayFor(modelBuilding => building.Description).ToString();}
+                                            @{var description = descriptionString.Truncate(262);}
+
+                                        <p class="media-object" align="justify">@description</p>
+
+                                        <br />
+                                        <a href="@Url.Action("Details", new { id = building.Id })" class="pull-right read-more">
+                                            <b>
+                                                READ MORE
+                                                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                            </b>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                                                }
+    </div>
+</div>
